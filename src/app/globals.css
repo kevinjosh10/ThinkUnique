@@ -31,25 +31,25 @@
     --radius: 0.5rem;
   }
   .dark {
-    --background: 285 23% 15%; /* #2D1E2F */
-    --foreground: 240 67% 94%; /* #E6E6FA */
-    --card: 285 23% 18%;
-    --card-foreground: 240 67% 94%;
-    --popover: 285 23% 15%;
-    --popover-foreground: 240 67% 94%;
-    --primary: 240 67% 94%; /* #E6E6FA */
-    --primary-foreground: 285 23% 15%;
-    --secondary: 285 15% 30%;
-    --secondary-foreground: 240 67% 94%;
-    --muted: 285 15% 30%;
-    --muted-foreground: 240 20% 75%;
-    --accent: 0 56% 89%; /* #F4C2C2 */
-    --accent-foreground: 285 23% 15%;
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+    --card: 222 47% 14%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222 47% 11%;
+    --secondary: 217 32% 17%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217 32% 17%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 199 89% 48%;
+    --accent-foreground: 210 40% 98%;
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 285 15% 25%;
-    --input: 285 15% 25%;
-    --ring: 0 56% 89%; /* Soft pink for rings */
+    --destructive-foreground: 210 40% 98%;
+    --border: 217 32% 17%;
+    --input: 217 32% 17%;
+    --ring: 199 89% 48%;
   }
 }
 
@@ -74,6 +74,6 @@
       0 0 40px hsl(var(--accent) / 0.2);
   }
   .text-gradient-brand {
-    @apply bg-gradient-to-r from-[#a855f7] via-[#6366f1] to-[#06b6d4] bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-[#38bdf8] via-[#3b82f6] to-[#0284c7] bg-clip-text text-transparent;
   }
 }
