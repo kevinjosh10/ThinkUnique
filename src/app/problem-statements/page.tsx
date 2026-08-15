@@ -9,8 +9,8 @@ export default function ProblemStatementsPage() {
   return (
     <div className="container py-12">
       <div className="text-center mb-12">
-        <h1 className="text-4xl md:text-5xl font-headline font-bold mb-4">Problem Statements</h1>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Choose a challenge that inspires your team to innovate.</p>
+        <h1 className="text-4xl md:text-5xl font-headline font-bold mb-4">Themes</h1>
+        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">There are 17 themes, each featuring a Software and a Hardware track. Select a theme and start working on a problem statement of your choice (you can take reference from previous year statements too).</p>
         <Button asChild variant="secondary" className="mt-6">
             <Link href="https://www.sih.gov.in/sih2025PS" target="_blank">
                 Know More

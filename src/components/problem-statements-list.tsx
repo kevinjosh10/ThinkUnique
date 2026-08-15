@@ -32,18 +32,8 @@ export default function ProblemStatementsList({ statements }: ProblemStatementsL
     return searchMatch && categoryMatch;
   });
 
-  const totalStatements = statements.length;
-  const hardwareStatements = statements.filter(s => s.category === 'Hardware').length;
-  const softwareStatements = statements.filter(s => s.category === 'Software').length;
-
   return (
     <>
-      <div className="mb-8 flex flex-wrap justify-center items-center gap-2 text-center md:gap-4">
-          <Badge className="text-sm md:text-md py-1 px-3 md:py-2 md:px-4" variant="secondary"><List className="mr-2 h-4 w-4"/>Total: {totalStatements}</Badge>
-          <Badge className="text-sm md:text-md py-1 px-3 md:py-2 md:px-4" variant="secondary"><Cpu className="mr-2 h-4 w-4"/>Hardware: {hardwareStatements}</Badge>
-          <Badge className="text-sm md:text-md py-1 px-3 md:py-2 md:px-4" variant="secondary"><Code className="mr-2 h-4 w-4"/>Software: {softwareStatements}</Badge>
-      </div>
-
       <div className="mb-8 flex flex-col items-center gap-4 max-w-lg mx-auto">
         <div className="relative w-full">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
@@ -99,7 +89,7 @@ export default function ProblemStatementsList({ statements }: ProblemStatementsL
               <CardTitle className="font-headline text-xl pt-2">{statement.title}</CardTitle>
             </CardHeader>
             <CardContent className="flex-grow">
-               <p className="text-sm text-muted-foreground line-clamp-3">{statement.description}</p>
+               <p className="text-sm text-muted-foreground">{statement.description}</p>
                
                {statement.referenceExamples && statement.referenceExamples.length > 0 && (
                  <Accordion type="single" collapsible className="w-full mt-4">
@@ -119,7 +109,7 @@ export default function ProblemStatementsList({ statements }: ProblemStatementsL
             <CardFooter>
               <Button asChild variant="outline" className="w-full">
                 <Link href={`/register?problemId=${statement.id}`}>
-                  Select this Problem
+                  Select this Theme
                   <ArrowRight className="ml-2 h-4 w-4"/>
                 </Link>
               </Button>

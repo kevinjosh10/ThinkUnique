@@ -10,7 +10,7 @@ export default function Home() {
       
       <div className="[perspective:800px] mb-4">
         <h1 className="text-5xl sm:text-6xl md:text-7xl font-headline font-bold tracking-tighter text-gradient-brand animate-float-3d" style={{'--float-delay': '0s'} as React.CSSProperties}>
-          ThinQnique
+          ThinQnique'26
         </h1>
       </div>
       
@@ -29,7 +29,7 @@ export default function Home() {
           </Link>
         </Button>
         <Button asChild size="lg" variant="outline" className="transition-all duration-300 transform hover:scale-105 hover:bg-primary/10 border-primary/30">
-          <Link href="/problem-statements">View Problem Statements</Link>
+          <Link href="/problem-statements">View Themes</Link>
         </Button>
       </div>
     </div>
