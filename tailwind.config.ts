@@ -131,6 +131,14 @@ export default {
             'background-position': '100% 50%',
           },
         },
+        'text-flow': {
+          '0%': {
+            'background-position': '0% 50%',
+          },
+          '100%': {
+            'background-position': '200% 50%',
+          },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
@@ -139,6 +147,7 @@ export default {
         'fade-in-up': 'fade-in-up 0.5s ease-out forwards',
         'float-3d': 'float-3d 6s ease-in-out infinite',
         'text-shimmer': 'text-shimmer 4s ease infinite',
+        'text-flow': 'text-flow 4s linear infinite',
       },
       animationDelay: {
         '300': '300ms',

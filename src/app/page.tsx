@@ -86,7 +86,7 @@ export default function Home() {
 
         <h1 
           className={cn(
-            "text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-headline font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-300 to-blue-400 animate-text-shimmer mb-4 sm:mb-6 transition-all duration-[4000ms] ease-[cubic-bezier(0.25,1,0.5,1)]",
+            "text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-headline font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-cyan-300 to-blue-500 animate-text-flow mb-4 sm:mb-6 transition-all duration-[4000ms] ease-[cubic-bezier(0.25,1,0.5,1)]",
             (!skipIntro && introStage < 1) ? "[clip-path:inset(0_50%_0_50%)] blur-sm opacity-0" : "[clip-path:inset(0_0_0_0)] blur-none opacity-100"
           )}
         >
