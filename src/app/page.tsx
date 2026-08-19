@@ -49,8 +49,8 @@ export default function Home() {
       {/* Background Network - Individual nodes will reveal themselves via the isRevealing prop */}
       <div className="absolute inset-0">
         <InteractiveSynapseNetwork
-          nodeColor="rgba(255,255,255,0.2)"
-          pulseColor="rgba(255,255,255,0.8)"
+          nodeColor="rgba(59,130,246,0.3)" // blue-500
+          pulseColor="rgba(96,165,250,1)"  // blue-400
           nodeCount={45}
           connectionRadius={150}
           trailOpacity={0.1}
@@ -64,9 +64,9 @@ export default function Home() {
           (!skipIntro && introStage < 3) ? "z-[70]" : "z-10"
       )}>
         
-        {/* The large white blur behind the text */}
+        {/* The large white/blue blur behind the text */}
         <div className={cn(
-            "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] sm:w-[600px] sm:h-[600px] bg-white/[0.03] rounded-full blur-[80px] sm:blur-[120px] pointer-events-none transition-opacity duration-1000",
+            "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] sm:w-[600px] sm:h-[600px] bg-blue-500/[0.04] rounded-full blur-[80px] sm:blur-[120px] pointer-events-none transition-opacity duration-1000",
             (!skipIntro && introStage < 2) ? "opacity-0" : "opacity-100"
         )} />
 
@@ -75,18 +75,18 @@ export default function Home() {
             <Link 
               href="/register" 
               className={cn(
-                "inline-flex absolute items-center gap-2 px-3 py-1 rounded-full bg-white/[0.02] border border-white/[0.05] hover:bg-white/[0.06] transition-all duration-1000",
+                "inline-flex absolute items-center gap-2 px-3 py-1 rounded-full bg-blue-500/[0.05] border border-blue-500/[0.15] hover:bg-blue-500/[0.1] transition-all duration-1000",
                 (!skipIntro && introStage < 2) ? "opacity-0 scale-95 pointer-events-none" : "opacity-100 scale-100"
               )}
             >
-              <span className="text-[10px] sm:text-xs font-medium text-white/60 tracking-widest uppercase">Registration Open</span>
-              <ChevronRight className="h-3 w-3 text-white/40" />
+              <span className="text-[10px] sm:text-xs font-medium text-blue-100/60 tracking-widest uppercase">Registration Open</span>
+              <ChevronRight className="h-3 w-3 text-blue-400/50" />
             </Link>
         </div>
 
         <h1 
           className={cn(
-            "text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-headline font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-white via-neutral-600 to-white bg-[length:200%_auto] animate-text-shimmer mb-4 sm:mb-6 transition-all duration-[4000ms] ease-[cubic-bezier(0.25,1,0.5,1)]",
+            "text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-headline font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-300 to-blue-400 animate-text-shimmer mb-4 sm:mb-6 transition-all duration-[4000ms] ease-[cubic-bezier(0.25,1,0.5,1)]",
             (!skipIntro && introStage < 1) ? "[clip-path:inset(0_50%_0_50%)] blur-sm opacity-0" : "[clip-path:inset(0_0_0_0)] blur-none opacity-100"
           )}
         >
@@ -108,16 +108,16 @@ export default function Home() {
             (!skipIntro && introStage < 2) ? "opacity-0 translate-y-4 pointer-events-none" : "opacity-100 translate-y-0"
           )}
         >
-          <Button asChild size="lg" className="w-full sm:w-auto h-12 px-8 bg-white text-black hover:bg-white/90 transition-all rounded-full font-medium text-base group">
+          <Button asChild size="lg" className="w-full sm:w-auto h-12 px-8 bg-blue-600 text-white hover:bg-blue-500 transition-all rounded-full font-medium text-base shadow-[0_0_20px_rgba(37,99,235,0.3)] group">
             <Link href="/register" className="w-full flex justify-center items-center">
               Register Team
               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Link>
           </Button>
-          <Button asChild size="lg" variant="outline" className="w-full sm:w-auto h-12 px-8 rounded-full border-white/10 bg-white/5 hover:bg-white/10 text-white transition-all font-medium text-base backdrop-blur-sm group">
+          <Button asChild size="lg" variant="outline" className="w-full sm:w-auto h-12 px-8 rounded-full border-blue-500/20 bg-blue-500/5 hover:bg-blue-500/15 text-blue-100 transition-all font-medium text-base backdrop-blur-sm group">
             <Link href="/problem-statements" className="w-full flex justify-center items-center">
               Explore Themes
-              <ChevronRight className="ml-2 h-4 w-4 text-white/50 group-hover:text-white group-hover:translate-x-0.5 transition-all" />
+              <ChevronRight className="ml-2 h-4 w-4 text-blue-400/50 group-hover:text-blue-400 group-hover:translate-x-0.5 transition-all" />
             </Link>
           </Button>
         </div>

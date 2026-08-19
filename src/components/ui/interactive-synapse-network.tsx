@@ -200,7 +200,8 @@ const InteractiveSynapseNetwork: React.FC<InteractiveSynapseNetworkProps> = ({
           ctx.beginPath()
           ctx.moveTo(n1.x, n1.y)
           ctx.lineTo(n2.x, n2.y)
-          ctx.strokeStyle = `rgba(255,255,255,${a})`
+          // Use pulseColor for lines but with lower opacity
+          ctx.strokeStyle = pulseColor.replace(/[^,]+(?=\))/, a.toString())
           ctx.stroke()
         })
       })

@@ -140,7 +140,7 @@ export default function RegistrationForm({ selectedProblem }: RegistrationFormPr
 
   if (submissionResult?.success) {
         return (
-            <Card className="max-w-2xl mx-auto bg-white/[0.02] border-white/10 backdrop-blur-sm shadow-[0_4px_24px_rgba(0,0,0,0.4)] text-center p-6 sm:p-8">
+            <Card className="max-w-2xl mx-auto bg-blue-900/[0.05] border-blue-500/20 backdrop-blur-sm shadow-[0_4px_24px_rgba(0,0,0,0.4)] text-center p-6 sm:p-8">
                 <CardHeader>
                     <PartyPopper className="h-16 w-16 mx-auto text-white mb-4"/>
                     <CardTitle className="text-3xl font-headline text-white/90">Registration Successful!</CardTitle>
@@ -184,7 +184,7 @@ export default function RegistrationForm({ selectedProblem }: RegistrationFormPr
         <input type="hidden" {...form.register("problemStatementTitle")} />
         <input type="hidden" {...form.register("edition")} />
 
-        <Card className="bg-white/[0.02] border-white/10 backdrop-blur-sm shadow-[0_4px_24px_rgba(0,0,0,0.4)]">
+        <Card className="bg-blue-900/[0.05] border-blue-500/20 backdrop-blur-sm shadow-[0_4px_24px_rgba(0,0,0,0.4)]">
             <CardHeader>
                 <CardTitle className="font-headline text-2xl">Selected Problem</CardTitle>
                  {form.formState.errors.problemStatementId && <FormMessage>{form.formState.errors.problemStatementId.message}</FormMessage>}
@@ -226,7 +226,7 @@ export default function RegistrationForm({ selectedProblem }: RegistrationFormPr
             )}
         </Card>
         
-        <Card className="bg-white/[0.02] border-white/10 backdrop-blur-sm shadow-[0_4px_24px_rgba(0,0,0,0.4)]">
+        <Card className="bg-blue-900/[0.05] border-blue-500/20 backdrop-blur-sm shadow-[0_4px_24px_rgba(0,0,0,0.4)]">
           <CardHeader>
             <CardTitle className="font-headline text-2xl">Team Details</CardTitle>
           </CardHeader>
@@ -243,7 +243,7 @@ export default function RegistrationForm({ selectedProblem }: RegistrationFormPr
           </CardContent>
         </Card>
 
-        <Card className="bg-white/[0.02] border-white/10 backdrop-blur-sm shadow-[0_4px_24px_rgba(0,0,0,0.4)]">
+        <Card className="bg-blue-900/[0.05] border-blue-500/20 backdrop-blur-sm shadow-[0_4px_24px_rgba(0,0,0,0.4)]">
             <CardHeader><CardTitle className="font-headline text-2xl">Team Leader</CardTitle></CardHeader>
             <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <FormField control={form.control} name="leaderName" render={({ field }) => (
@@ -285,7 +285,7 @@ export default function RegistrationForm({ selectedProblem }: RegistrationFormPr
             </CardContent>
         </Card>
 
-        <Card className="bg-white/[0.02] border-white/10 backdrop-blur-sm shadow-[0_4px_24px_rgba(0,0,0,0.4)]">
+        <Card className="bg-blue-900/[0.05] border-blue-500/20 backdrop-blur-sm shadow-[0_4px_24px_rgba(0,0,0,0.4)]">
           <CardHeader>
             <CardTitle className="font-headline text-2xl">Team Members ({fields.length}/5)</CardTitle>
             <CardDescription>Please add exactly 5 additional team members.</CardDescription>
@@ -340,7 +340,7 @@ export default function RegistrationForm({ selectedProblem }: RegistrationFormPr
           </CardContent>
         </Card>
 
-        <Card className="bg-white/[0.02] border-white/10 backdrop-blur-sm shadow-[0_4px_24px_rgba(0,0,0,0.4)]">
+        <Card className="bg-blue-900/[0.05] border-blue-500/20 backdrop-blur-sm shadow-[0_4px_24px_rgba(0,0,0,0.4)]">
             <CardHeader><CardTitle className="font-headline text-2xl">Submission Checks</CardTitle></CardHeader>
             <CardContent>
                 <div className="space-y-4">
@@ -362,7 +362,7 @@ export default function RegistrationForm({ selectedProblem }: RegistrationFormPr
         </Card>
 
         <div className="flex justify-end">
-            <Button type="submit" size="lg" disabled={isSubmitting || !selectedProblem} className="bg-white text-black hover:bg-white/90 font-semibold transition-all">
+            <Button type="submit" size="lg" disabled={isSubmitting || !selectedProblem} className="bg-blue-600 text-white hover:bg-blue-500 shadow-[0_0_20px_rgba(37,99,235,0.3)] font-semibold transition-all">
                 {isSubmitting ? <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Submitting...</> : "Submit Registration"}
             </Button>
         </div>

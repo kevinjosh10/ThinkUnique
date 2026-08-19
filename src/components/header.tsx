@@ -24,7 +24,7 @@ export function Header() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         scrolled 
-          ? "bg-black/70 backdrop-blur-md border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.5)] py-2" 
+          ? "bg-black/70 backdrop-blur-md border-b border-blue-500/10 shadow-[0_4px_30px_rgba(0,0,0,0.5)] py-2" 
           : "bg-transparent border-b border-transparent py-4"
       )}
     >
@@ -56,7 +56,7 @@ export function Header() {
                 <span className="sr-only">Toggle Menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="left" className="bg-black/95 border-white/10 text-white backdrop-blur-xl">
+            <SheetContent side="left" className="bg-black/95 border-blue-500/10 text-white backdrop-blur-xl">
               <SheetTitle className="sr-only">Menu</SheetTitle>
               <nav className="grid gap-6 text-lg font-medium mt-8">
                   <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center gap-2 text-lg font-semibold">
@@ -78,7 +78,7 @@ export function Header() {
         </div>
         
         <div className="hidden md:flex items-center justify-end">
-           <Button asChild variant="outline" className="rounded-full border-white/20 bg-white/5 hover:bg-white text-white hover:text-black transition-all h-9 px-6 text-sm font-medium">
+           <Button asChild variant="outline" className="rounded-full border-blue-500/20 bg-blue-500/10 hover:bg-blue-600 text-blue-100 hover:text-white transition-all h-9 px-6 text-sm font-medium">
              <Link href="/register">Register Now</Link>
            </Button>
         </div>
