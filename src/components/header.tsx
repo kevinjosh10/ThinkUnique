@@ -31,7 +31,7 @@ export function Header() {
       <div className="w-full max-w-7xl mx-auto px-6 flex h-12 items-center justify-between">
         <div className="flex items-center gap-10">
           <Link href="/" className="flex items-center space-x-3 group">
-            <div className="h-7 w-7 rounded-md bg-white flex items-center justify-center text-black font-bold text-xs transition-transform group-hover:scale-105 shadow-[0_0_15px_rgba(255,255,255,0.3)]">
+            <div className="h-7 w-7 rounded-md bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center text-white font-bold text-xs transition-transform group-hover:scale-105 shadow-[0_0_15px_rgba(59,130,246,0.5)]">
               TQ
             </div>
             <span className="hidden font-bold sm:inline-block font-headline tracking-tight text-white transition-opacity group-hover:opacity-80 text-lg">
@@ -60,7 +60,7 @@ export function Header() {
               <SheetTitle className="sr-only">Menu</SheetTitle>
               <nav className="grid gap-6 text-lg font-medium mt-8">
                   <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center gap-2 text-lg font-semibold">
-                      <div className="h-6 w-6 rounded bg-white flex items-center justify-center text-black font-bold text-xs">TQ</div>
+                      <div className="h-6 w-6 rounded bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center text-white font-bold text-xs shadow-[0_0_15px_rgba(59,130,246,0.3)]">TQ</div>
                       <span className="font-bold font-headline">ThinQnique</span>
                   </Link>
                   <Link href="/problem-statements" onClick={() => setIsOpen(false)} className="text-white/60 transition-colors hover:text-white">
