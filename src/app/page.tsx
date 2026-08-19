@@ -90,7 +90,7 @@ export default function Home() {
             (!skipIntro && introStage < 1) ? "[clip-path:inset(0_50%_0_50%)] blur-sm opacity-0" : "[clip-path:inset(0_0_0_0)] blur-none opacity-100"
           )}
         >
-          ThinQnique <span className="font-light text-neutral-500 block sm:inline">'26</span>
+          ThinQnique <span className="font-light text-blue-500/80 block sm:inline">'26</span>
         </h1>
         
         <p 
