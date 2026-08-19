@@ -19,6 +19,8 @@ export interface InteractiveSynapseNetworkProps {
   ariaLabel?: string
   /** Additional CSS classes on the wrapper */
   className?: string
+  /** Trigger individual node reveal animation */
+  isRevealing?: boolean
 }
 
 const InteractiveSynapseNetwork: React.FC<InteractiveSynapseNetworkProps> = ({
@@ -30,11 +32,22 @@ const InteractiveSynapseNetwork: React.FC<InteractiveSynapseNetworkProps> = ({
   trailOpacity = 0.2,
   ariaLabel = 'Interactive synapse network',
   className = '',
+  isRevealing = undefined,
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const nodesRef = useRef<Node[]>([])
   const mouseRef = useRef({ x: -9999, y: -9999 })
   const rafRef = useRef<number>()
+
+  const isRevealingRef = useRef(isRevealing === true)
+  const revealStartTimeRef = useRef<number | null>(null)
+
+  useEffect(() => {
+    if (isRevealing && !isRevealingRef.current) {
+        isRevealingRef.current = true
+        revealStartTimeRef.current = performance.now()
+    }
+  }, [isRevealing])
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -86,6 +99,8 @@ const InteractiveSynapseNetwork: React.FC<InteractiveSynapseNetworkProps> = ({
       connections: Node[] = []
       pulses: Pulse[] = []
       activation = 0
+      revealDelay: number
+      revealAlpha = 0
 
       constructor() {
         this.x = Math.random() * width
@@ -93,6 +108,7 @@ const InteractiveSynapseNetwork: React.FC<InteractiveSynapseNetworkProps> = ({
         this.vx = (Math.random() - 0.5) * 0.5
         this.vy = (Math.random() - 0.5) * 0.5
         this.radius = Math.random() * 2 + 2
+        this.revealDelay = Math.random() * 2500 // 0 to 2.5s delay
       }
 
       update() {
@@ -117,16 +133,32 @@ const InteractiveSynapseNetwork: React.FC<InteractiveSynapseNetworkProps> = ({
 
         this.pulses = this.pulses.filter(p => p.progress < 1)
         this.pulses.forEach(p => p.update())
+
+        if (revealStartTimeRef.current !== null) {
+            const elapsed = performance.now() - revealStartTimeRef.current
+            if (elapsed > this.revealDelay) {
+                this.revealAlpha = Math.min(1, (elapsed - this.revealDelay) / 500)
+            }
+        } else {
+            this.revealAlpha = isRevealing === undefined ? 1 : (isRevealingRef.current ? 1 : 0)
+        }
       }
 
       draw() {
+        if (this.revealAlpha <= 0) return
+
         ctx.beginPath()
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2)
-        const alpha = Math.max(0.2, this.activation)
+        const alpha = Math.max(0.2, this.activation) * this.revealAlpha
         ctx.fillStyle = nodeColor.replace(/[^,]+(?=\))/, alpha.toString())
         ctx.fill()
 
-        this.pulses.forEach(p => p.draw())
+        this.pulses.forEach(p => {
+          // hack to easily apply revealAlpha to pulse
+          ctx.globalAlpha = this.revealAlpha
+          p.draw()
+          ctx.globalAlpha = 1
+        })
       }
     }
 
@@ -157,16 +189,18 @@ const InteractiveSynapseNetwork: React.FC<InteractiveSynapseNetworkProps> = ({
     window.addEventListener('resize', onResize)
 
     const animate = () => {
-      ctx.fillStyle = `rgba(0,15,25,${trailOpacity})`
+      ctx.fillStyle = `rgba(0,0,0,${trailOpacity})`
       ctx.fillRect(0, 0, width, height)
 
       nodesRef.current.forEach(n1 => {
         n1.connections.forEach(n2 => {
-          const a = Math.max(0.05, n1.activation, n2.activation) * 0.2
+          if (n1.revealAlpha <= 0 || n2.revealAlpha <= 0) return
+          const revealMultiplier = Math.min(n1.revealAlpha, n2.revealAlpha)
+          const a = Math.max(0.02, Math.max(n1.activation, n2.activation) * 0.1) * revealMultiplier
           ctx.beginPath()
           ctx.moveTo(n1.x, n1.y)
           ctx.lineTo(n2.x, n2.y)
-          ctx.strokeStyle = `rgba(0,220,255,${a})`
+          ctx.strokeStyle = `rgba(255,255,255,${a})`
           ctx.stroke()
         })
       })
@@ -193,7 +227,7 @@ const InteractiveSynapseNetwork: React.FC<InteractiveSynapseNetworkProps> = ({
     <div
       role="img"
       aria-label={ariaLabel}
-      className={`relative w-full h-full overflow-hidden bg-[hsl(var(--network-bg))] ${className}`}
+      className={`relative w-full h-full overflow-hidden bg-black ${className}`}
     >
       <canvas
         ref={canvasRef}

@@ -123,6 +123,14 @@ export default {
             transform: 'translateY(-15px) rotateX(10deg) rotateY(5deg) translateZ(20px)',
           },
         },
+        'text-shimmer': {
+          '0%, 100%': {
+            'background-position': '0% 50%',
+          },
+          '50%': {
+            'background-position': '100% 50%',
+          },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
@@ -130,6 +138,7 @@ export default {
         'fade-in-down': 'fade-in-down 0.5s ease-out forwards',
         'fade-in-up': 'fade-in-up 0.5s ease-out forwards',
         'float-3d': 'float-3d 6s ease-in-out infinite',
+        'text-shimmer': 'text-shimmer 4s ease infinite',
       },
       animationDelay: {
         '300': '300ms',

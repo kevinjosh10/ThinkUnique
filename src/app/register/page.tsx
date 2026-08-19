@@ -41,7 +41,7 @@ type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
 export default async function RegisterPage({ searchParams }: { searchParams: SearchParams }) {
     const params = await searchParams;
     return (
-        <div className="container py-12">
+        <div className="container pt-32 pb-12 animate-fade-in-up">
             <div className="text-center mb-12">
                 <h1 className="text-5xl font-headline font-bold mb-4">Team Registration</h1>
                 <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Complete the form below to register your team for the hackathon.</p>

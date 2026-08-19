@@ -7,7 +7,7 @@ import { ArrowUpRight } from "lucide-react";
 
 export default function ProblemStatementsPage() {
   return (
-    <div className="container py-12">
+    <div className="container pt-32 pb-12 animate-fade-in-up">
       <div className="text-center mb-12">
         <h1 className="text-4xl md:text-5xl font-headline font-bold mb-4">Themes</h1>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">There are 17 themes, each featuring a Software and a Hardware track. Select a theme and start working on a problem statement of your choice (you can take reference from previous year statements too).</p>

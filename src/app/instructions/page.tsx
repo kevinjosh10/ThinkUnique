@@ -21,16 +21,16 @@ const teamCriteria = [
 
 export default function InstructionsPage() {
   return (
-    <div className="container py-12">
+    <div className="container pt-32 pb-12 animate-fade-in-up">
       <div className="text-center mb-12">
         <h1 className="text-4xl md:text-5xl font-headline font-bold mb-4">Event Instructions</h1>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Follow these guidelines to ensure your submission is valid.</p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-        <Card className="bg-card/50 backdrop-blur-sm card-glow hover:border-accent transition-all duration-300 transform hover:-translate-y-1">
+        <Card className="bg-white/[0.02] border-white/10 backdrop-blur-sm shadow-[0_4px_24px_rgba(0,0,0,0.4)] hover:bg-white/[0.04] transition-all duration-300 transform hover:-translate-y-1">
           <CardHeader>
             <CardTitle className="font-headline text-2xl flex items-center gap-3">
-              <FileText className="text-accent"/>
+              <FileText className="text-white/80"/>
               Presentation Guidelines
             </CardTitle>
           </CardHeader>
@@ -38,12 +38,12 @@ export default function InstructionsPage() {
             <ul className="space-y-4">
               {presentationRules.map((rule, index) => (
                 <li key={index} className="flex items-start gap-3">
-                  <CheckCircle2 className="mt-1 h-5 w-5 text-accent flex-shrink-0" />
+                  <CheckCircle2 className="mt-1 h-5 w-5 text-white flex-shrink-0" />
                   <span>{rule}</span>
                 </li>
               ))}
             </ul>
-            <Button asChild className="mt-6 w-full bg-accent text-accent-foreground hover:bg-accent/90">
+            <Button asChild className="mt-6 w-full bg-white text-black hover:bg-white/90 font-semibold transition-all">
                 <Link href="/SIH2026-IDEA-Presentation-Format.pptx" target="_blank">
                     <Download className="mr-2"/>
                     Download Presentation Template
@@ -51,10 +51,10 @@ export default function InstructionsPage() {
             </Button>
           </CardContent>
         </Card>
-        <Card className="bg-card/50 backdrop-blur-sm card-glow hover:border-accent transition-all duration-300 transform hover:-translate-y-1">
+        <Card className="bg-white/[0.02] border-white/10 backdrop-blur-sm shadow-[0_4px_24px_rgba(0,0,0,0.4)] hover:bg-white/[0.04] transition-all duration-300 transform hover:-translate-y-1">
           <CardHeader>
             <CardTitle className="font-headline text-2xl flex items-center gap-3">
-              <Users className="text-accent" />
+              <Users className="text-white/80" />
               Team Criteria
             </CardTitle>
           </CardHeader>
@@ -62,7 +62,7 @@ export default function InstructionsPage() {
             <ul className="space-y-4">
               {teamCriteria.map((rule, index) => (
                 <li key={index} className="flex items-start gap-3">
-                  <CheckCircle2 className="mt-1 h-5 w-5 text-accent flex-shrink-0" />
+                  <CheckCircle2 className="mt-1 h-5 w-5 text-white flex-shrink-0" />
                   <span>{rule}</span>
                 </li>
               ))}

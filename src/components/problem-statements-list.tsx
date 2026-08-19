@@ -80,13 +80,13 @@ export default function ProblemStatementsList({ statements }: ProblemStatementsL
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {filteredStatements.map((statement) => (
-          <Card key={statement.id} className="bg-card/50 backdrop-blur-sm card-glow flex flex-col hover:border-accent transition-colors duration-300 transform hover:-translate-y-1">
+          <Card key={statement.id} className="bg-white/[0.02] border-white/10 backdrop-blur-sm shadow-[0_4px_24px_rgba(0,0,0,0.4)] flex flex-col hover:border-white/30 hover:bg-white/[0.04] transition-all duration-300 transform hover:-translate-y-1">
             <CardHeader>
               <div className="flex justify-between items-start mb-2">
-                <Badge variant="secondary">{statement.id}</Badge>
-                <Badge variant="outline" className="w-fit border-accent text-accent">{statement.category}</Badge>
+                <Badge variant="secondary" className="bg-white/10 text-white hover:bg-white/20">{statement.id}</Badge>
+                <Badge variant="outline" className="w-fit border-white/20 text-white/70">{statement.category}</Badge>
               </div>
-              <CardTitle className="font-headline text-xl pt-2">{statement.title}</CardTitle>
+              <CardTitle className="font-headline text-xl pt-2 text-white/90">{statement.title}</CardTitle>
             </CardHeader>
             <CardContent className="flex-grow">
                <p className="text-sm text-muted-foreground">{statement.description}</p>

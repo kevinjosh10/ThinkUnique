@@ -139,10 +139,12 @@ export default function RegistrationForm({ selectedProblem }: RegistrationFormPr
   };
 
   if (submissionResult?.success) {
-    return (
-        <Card className="max-w-2xl mx-auto bg-card/50 card-glow text-center p-8">
-            <PartyPopper className="h-16 w-16 mx-auto text-accent mb-4"/>
-            <h2 className="text-3xl font-headline font-bold mb-2">Registration Successful!</h2>
+        return (
+            <Card className="max-w-2xl mx-auto bg-white/[0.02] border-white/10 backdrop-blur-sm shadow-[0_4px_24px_rgba(0,0,0,0.4)] text-center p-6 sm:p-8">
+                <CardHeader>
+                    <PartyPopper className="h-16 w-16 mx-auto text-white mb-4"/>
+                    <CardTitle className="text-3xl font-headline text-white/90">Registration Successful!</CardTitle>
+                </CardHeader>
             <p className="text-muted-foreground mb-4">{submissionResult.message}</p>
             <div className="p-4 bg-muted rounded-lg">
                 <p className="text-sm">Your Submission ID is:</p>
@@ -182,7 +184,7 @@ export default function RegistrationForm({ selectedProblem }: RegistrationFormPr
         <input type="hidden" {...form.register("problemStatementTitle")} />
         <input type="hidden" {...form.register("edition")} />
 
-        <Card className="bg-card/50 backdrop-blur-sm card-glow">
+        <Card className="bg-white/[0.02] border-white/10 backdrop-blur-sm shadow-[0_4px_24px_rgba(0,0,0,0.4)]">
             <CardHeader>
                 <CardTitle className="font-headline text-2xl">Selected Problem</CardTitle>
                  {form.formState.errors.problemStatementId && <FormMessage>{form.formState.errors.problemStatementId.message}</FormMessage>}
@@ -224,7 +226,7 @@ export default function RegistrationForm({ selectedProblem }: RegistrationFormPr
             )}
         </Card>
         
-        <Card className="bg-card/50 backdrop-blur-sm card-glow">
+        <Card className="bg-white/[0.02] border-white/10 backdrop-blur-sm shadow-[0_4px_24px_rgba(0,0,0,0.4)]">
           <CardHeader>
             <CardTitle className="font-headline text-2xl">Team Details</CardTitle>
           </CardHeader>
@@ -241,7 +243,7 @@ export default function RegistrationForm({ selectedProblem }: RegistrationFormPr
           </CardContent>
         </Card>
 
-        <Card className="bg-card/50 backdrop-blur-sm card-glow">
+        <Card className="bg-white/[0.02] border-white/10 backdrop-blur-sm shadow-[0_4px_24px_rgba(0,0,0,0.4)]">
             <CardHeader><CardTitle className="font-headline text-2xl">Team Leader</CardTitle></CardHeader>
             <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <FormField control={form.control} name="leaderName" render={({ field }) => (
@@ -283,7 +285,7 @@ export default function RegistrationForm({ selectedProblem }: RegistrationFormPr
             </CardContent>
         </Card>
 
-        <Card className="bg-card/50 backdrop-blur-sm card-glow">
+        <Card className="bg-white/[0.02] border-white/10 backdrop-blur-sm shadow-[0_4px_24px_rgba(0,0,0,0.4)]">
           <CardHeader>
             <CardTitle className="font-headline text-2xl">Team Members ({fields.length}/5)</CardTitle>
             <CardDescription>Please add exactly 5 additional team members.</CardDescription>
@@ -338,7 +340,7 @@ export default function RegistrationForm({ selectedProblem }: RegistrationFormPr
           </CardContent>
         </Card>
 
-        <Card className="bg-card/50 backdrop-blur-sm card-glow">
+        <Card className="bg-white/[0.02] border-white/10 backdrop-blur-sm shadow-[0_4px_24px_rgba(0,0,0,0.4)]">
             <CardHeader><CardTitle className="font-headline text-2xl">Submission Checks</CardTitle></CardHeader>
             <CardContent>
                 <div className="space-y-4">
@@ -360,9 +362,8 @@ export default function RegistrationForm({ selectedProblem }: RegistrationFormPr
         </Card>
 
         <div className="flex justify-end">
-            <Button type="submit" size="lg" disabled={isSubmitting || !selectedProblem} className="bg-accent text-accent-foreground hover:bg-accent/90 shadow-lg shadow-accent/20">
-                {isSubmitting ? <Loader2 className="mr-2 h-4 w-4 animate-spin"/> : <Rocket className="mr-2 h-4 w-4" />}
-                Submit Registration
+            <Button type="submit" size="lg" disabled={isSubmitting || !selectedProblem} className="bg-white text-black hover:bg-white/90 font-semibold transition-all">
+                {isSubmitting ? <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Submitting...</> : "Submit Registration"}
             </Button>
         </div>
       </form>
