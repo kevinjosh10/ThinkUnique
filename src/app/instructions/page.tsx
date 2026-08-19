@@ -23,7 +23,7 @@ export default function InstructionsPage() {
   return (
     <div className="container pt-32 pb-12 animate-fade-in-up">
       <div className="text-center mb-12">
-        <h1 className="text-4xl md:text-5xl font-headline font-bold mb-4">Event Instructions</h1>
+        <h1 className="text-4xl md:text-5xl font-headline font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-400 animate-text-flow bg-[length:200%_auto]">Event Instructions</h1>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Follow these guidelines to ensure your submission is valid.</p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">

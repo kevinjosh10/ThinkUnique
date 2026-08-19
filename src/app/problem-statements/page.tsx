@@ -9,7 +9,7 @@ export default function ProblemStatementsPage() {
   return (
     <div className="container pt-32 pb-12 animate-fade-in-up">
       <div className="text-center mb-12">
-        <h1 className="text-4xl md:text-5xl font-headline font-bold mb-4">Themes</h1>
+        <h1 className="text-4xl md:text-5xl font-headline font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-400 animate-text-flow bg-[length:200%_auto]">Themes</h1>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">There are 17 themes, each featuring a Software and a Hardware track. Select a theme and start working on a problem statement of your choice (you can take reference from previous year statements too).</p>
         <Button asChild variant="outline" className="mt-6 border-blue-500/20 bg-blue-500/10 text-blue-100 hover:bg-blue-600 hover:text-white transition-all">
             <Link href="https://www.sih.gov.in/sih2025PS" target="_blank">
